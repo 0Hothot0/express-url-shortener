@@ -1,3 +1,4 @@
+import config  from "config";
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
@@ -5,6 +6,6 @@ export default defineConfig({
 	schema: "./src/database/schema.js",
 	dialect: "postgresql",
 	dbCredentials: {
-		url: "",
+		url: config.get("database.connectionString"),
 	},
 });
